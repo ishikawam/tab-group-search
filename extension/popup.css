@@ -1,0 +1,128 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f1f1f;
+  --muted: #6b6b6b;
+  --border: #dadce0;
+  --selected: #e8f0fe;
+  --error: #c5221f;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #202124;
+    --fg: #e8eaed;
+    --muted: #9aa0a6;
+    --border: #3c4043;
+    --selected: #394457;
+    --error: #f28b82;
+  }
+}
+
+body {
+  width: 640px;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.4 system-ui, sans-serif;
+}
+
+#query {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: inherit;
+  font-size: 15px;
+  outline: none;
+}
+
+#status {
+  margin: 0;
+  padding: 4px 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+#status.error {
+  color: var(--error);
+}
+
+#results {
+  max-height: 480px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+#results li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+#results li[aria-selected="true"] {
+  background: var(--selected);
+}
+
+.title,
+.url {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.url {
+  grid-column: 1;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.group {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 200px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.group-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.badge {
+  flex: none;
+  padding: 0 4px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+/* chrome.tabGroups.Color に対応する色 */
+.dot.grey { background: #5f6368; }
+.dot.blue { background: #1a73e8; }
+.dot.red { background: #d93025; }
+.dot.yellow { background: #f9ab00; }
+.dot.green { background: #1e8e3e; }
+.dot.pink { background: #d01884; }
+.dot.purple { background: #a142f4; }
+.dot.cyan { background: #007b83; }
+.dot.orange { background: #fa903e; }

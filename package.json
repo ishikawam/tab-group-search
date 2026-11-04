@@ -1,0 +1,11 @@
+{
+  "name": "tab-group-search",
+  "version": "0.1.0",
+  "description": "Chrome 保存済みタブグループ検索",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "classic-level": "^3.0.0"
+  },
+  "private": true
+}

@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Group Search",
+  "description": "閉じた保存済みタブグループをグループ名・タブタイトル・URL で検索して復元する",
+  "version": "0.1.0",
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "保存済みタブグループを検索",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      }
+    }
+  },
+  "permissions": [
+    "nativeMessaging",
+    "tabs",
+    "tabGroups",
+    "identity",
+    "identity.email",
+    "notifications"
+  ]
+}
